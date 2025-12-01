@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أحمد هاني | مصمم إبداعي</title>
+  <style>
+    :root {
+      --primary-color: #0af;
+      --secondary-color: #ffcc00;
+      --bg-color: #111;
+      --card-bg: #1b1b1b;
+      --text-color: #fff;
+      --text-muted: #aaa;
+    }
+    body { margin:0; font-family: Cairo, Poppins, Arial; background:var(--bg-color); color:var(--text-color); transition: all 0.3s ease; }
+    header { padding:60px 40px; text-align:center; background:#000; }
+    header h1 { font-size:48px; margin:0; }
+    header p { font-size:20px; color:var(--text-muted); }
+    .btn { display:inline-block; margin:15px; padding:12px 26px; background:var(--primary-color); color:#000; text-decoration:none; font-weight:600; border-radius:12px; cursor:pointer; transition: all 0.3s; }
+    .btn:hover { background:var(--secondary-color); }
+    section { padding:60px 40px; max-width:1200px; margin:auto; }
+    h2 { font-size:36px; margin-bottom:25px; border-right:6px solid var(--primary-color); padding-right:12px; }
+    .services, .portfolio { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:25px; }
+    .card { background:var(--card-bg); padding:25px; border-radius:20px; box-shadow:0 4px 15px rgba(0,0,0,0.5); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-10px); }
+    .card h3 { margin-top:0; color:var(--primary-color); }
+    .lang-switch { position:fixed; top:10px; left:10px; background:var(--primary-color); color:#000; padding:10px 15px; border-radius:12px; cursor:pointer; z-index:1000; font-weight:600; }
+    video, img { width:100%; border-radius:12px; margin-top:15px; }
+    footer { text-align:center; padding:40px; font-size:14px; background:#000; color:#666; }
+  </style>
+</head>
+<body>
+  <div class="lang-switch" onclick="switchLang()">English</div>
+
+  <header id="header">
+    <h1>أحمد هاني</h1>
+    <p>مصمم إبداعي | موشن | 3D | فيديو | VFX | تصميم جرافيك</p>
+    <a class="btn" href="#portfolio">عرض الأعمال</a>
+    <a class="btn" href="#contact">طلب مشروع</a>
+  </header>
+
+  <section id="services">
+    <h2>الخدمات</h2>
+    <div class="services">
+      <div class="card"><h3>تصميم جرافيك</h3><p>الهوية البصرية، منشورات السوشيال ميديا، إعلانات، تصاميم متكاملة.</p></div>
+      <div class="card"><h3>موشن جرافيكس</h3><p>فيديوهات توضيحية، أنيميشن لوجو، إعلانات متحركة.</p></div>
+      <div class="card"><h3>تحرير الفيديو</h3><p>ريلز، إعلانات، يوتيوب، فيديوهات شركات.</p></div>
+      <div class="card"><h3>3D و CGI</h3><p>تصيير منتجات، إعلانات 3D، نمذجة وتحريك ثلاثي الأبعاد.</p></div>
+      <div class="card"><h3>VFX</h3><p>تركيب، تتبع، الشاشة الخضراء، تأثيرات رقمية.</p></div>
+      <div class="card"><h3>حلول إبداعية بالذكاء الاصطناعي</h3><p>فيديوهات AI، تحسين الصور، صوت AI.</p></div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>الأعمال</h2>
+    <div class="portfolio">
+      <div class="card"><h3>مشروع موشن</h3><video src="motion_sample.mp4" controls></video></div>
+      <div class="card"><h3>مشروع 3D</h3><img src="3d_sample.jpg" alt="3D Project"></div>
+      <div class="card"><h3>مشروع جرافيك</h3><img src="graphic_sample.jpg" alt="Graphic Project"></div>
+      <div class="card"><h3>تحرير فيديو</h3><video src="video_sample.mp4" controls></video></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>عنّي</h2>
+    <p>أنا أحمد هاني، مصمم إبداعي بخبرة أكثر من 10 سنوات في الموشن جرافيكس، 3D، تحرير الفيديو وVFX. عملت مع علامات تجارية في مصر، السعودية، الإمارات والأسواق العالمية. هدفي تقديم محتوى بصري قصصي ذو تأثير حقيقي.</p>
+  </section>
+
+  <section id="contact">
+    <h2>طلب مشروع</h2>
+    <p>البريد الإلكتروني: example@mail.com</p>
+    <p>واتساب: 0000-000-000</p>
+    <p>يمكنك استبدال هذا النموذج بنموذج تواصل متكامل أو دمج خدمات Form.</p>
+  </section>
+
+  <footer>
+    © 2025 أحمد هاني — جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    let lang = 'ar';
+    function switchLang() {
+      if(lang === 'ar') {
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = 'en';
+        document.getElementById('header').querySelector('h1').textContent = 'Ahmed Hany';
+        document.getElementById('header').querySelector('p').textContent = 'Creative Designer | Motion | 3D | Video | VFX | Graphic Design';
+        document.querySelector('.btn[href="#portfolio"]').textContent = 'View Portfolio';
+        document.querySelector('.btn[href="#contact"]').textContent = 'Request Project';
+        document.querySelector('#services h2').textContent = 'Services';
+        document.querySelector('#about h2').textContent = 'About Me';
+        document.querySelector('#portfolio h2').textContent = 'Portfolio';
+        document.querySelector('#contact h2').textContent = 'Contact';
+        lang = 'en';
+        document.querySelector('.lang-switch').textContent = 'عربي';
+      } else {
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+        document.getElementById('header').querySelector('h1').textContent = 'أحمد هاني';
+        document.getElementById('header').querySelector('p').textContent = 'مصمم إبداعي | موشن | 3D | فيديو | VFX | تصميم جرافيك';
+        document.querySelector('.btn[href="#portfolio"]').textContent = 'عرض الأعمال';
+        document.querySelector('.btn[href="#contact"]').textContent = 'طلب مشروع';
+        document.querySelector('#services h2').textContent = 'الخدمات';
+        document.querySelector('#about h2').textContent = 'عنّي';
+        document.querySelector('#portfolio h2').textContent = 'الأعمال';
+        document.querySelector('#contact h2').textContent = 'طلب مشروع';
+        lang = 'ar';
+        document.querySelector('.lang-switch').textContent = 'English';
+      }
+    }
+  </script>
+</body>
+</html>
